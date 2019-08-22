@@ -1,3 +1,5 @@
-from django.test import TestCase
+def a(hour=None, **kwargs):
+    print(kwargs)
 
-# Create your tests here.
+a(hour="asdsad", min="asd")
+

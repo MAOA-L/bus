@@ -78,6 +78,9 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',  # LimitOffsetPagination 分页风格
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',  # LimitOffsetPagination 分页风格
     'PAGE_SIZE': 10,  # 每页显示多少个
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
 ROOT_URLCONF = 'bus.urls'
 
@@ -137,7 +140,7 @@ TIME_FORMAT_TIME_COMMON = "%H:%M:%S"
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static").replace('\\', '/')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

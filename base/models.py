@@ -1,4 +1,7 @@
+import uuid
+
 from django.db import models
+
 
 class BaseModel(models.Model):
     id = models.UUIDField(verbose_name="UUID", primary_key=True, default=uuid.uuid1)
@@ -7,4 +10,4 @@ class BaseModel(models.Model):
     is_active = models.BooleanField(verbose_name='是否有效', default=True)
 
     class Meta:
-        abstract = Trues
+        abstract = True
